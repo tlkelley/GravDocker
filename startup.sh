@@ -30,6 +30,9 @@ sed -i 's/root\s.\+;$/root \/var\/www\/html;/g' /etc/nginx/sites-available/defau
 
 # Configure php
 sed -i 's/php8\.2\-fpm\.sock/php-fpm.sock/g' /etc/php/8.2/fpm/pool.d/www.conf
+sed -i 's/upload\_max\_filesize.\+$/upload_max_filesize = 1G/g' /etc/php/8.2/fpm/php.ini
+sed -i 's/post\_max\_size.\+$/post_max_size = 1G/g' /etc/php/8.2/fpm/php.ini
+sed -i 's/memory\_limit.\+$/memory_limit = 2G/g' /etc/php/8.2/fpm/php.ini
 
 #Start php-fpm and nginx
 service php8.2-fpm start
