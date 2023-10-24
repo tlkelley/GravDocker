@@ -1,0 +1,1 @@
+* * * * * apps cd /var/www/html;/usr/bin/php bin/grav scheduler 1>> /dev/null 2>&1
